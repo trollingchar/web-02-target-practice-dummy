@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Target practice test page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="min-h-full bg-orange-200 p-4 text-center text-4xl font-[Black_Ops_One] flex flex-col gap-2">
+Target practice test page
+<div class="border-black bg-lime-900 p-4 text-stone-100 min-h-40 border-6 flex flex-col gap-2">
+    <div id="target">
+        Tailwind must not break<br/>Font must not break<br/>Image must not break<br/>This text must be green (bg-lime-400)
+    </div>
+    <img src="cat.png" class="m-auto border-black border-6 mb-10" alt="cat"/>
+    <div id="result">
+        Validating...
+    </div>
+</div>
+Load it into iframe<br/>Access the script<br/>Make the validation pass
+<script>
+    function failTest() {
+        document.getElementById("target").classList.add('text-red-500');
+    }
+
+    function validate() {
+        let classes = document.getElementById("target").classList;
+        let ok = classes && !classes.contains('text-red-500') && classes.contains('text-lime-400');
+        let el = document.getElementById("result");
+        el.innerText = ok ? "Validation successful" : "Validation failed";
+        el.classList.add(ok ? 'text-lime-400' : 'text-red-500');
+    }
+
+    failTest();
+    validate();
+</script>
+</body>
+</html>
