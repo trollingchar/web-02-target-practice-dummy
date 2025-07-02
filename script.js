@@ -5,8 +5,8 @@ fetch('https://trollingchar.github.io/web-02-target-practice-dummy/images/cat.pn
 
 
 // validate
-// ok = false;
 setTimeout(() => {
+    ok = false;
     let el = document.getElementById("result");
     el.innerText = ok ? "Validation successful" : "Validation failed";
     el.classList.add(ok ? 'text-lime-400' : 'text-red-500');
