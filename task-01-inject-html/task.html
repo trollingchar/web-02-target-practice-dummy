@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Target practice test page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="min-h-full bg-orange-200 p-4 text-center text-4xl font-[Black_Ops_One] flex flex-col gap-2">
+<script>
+    function pwn() {
+        alert('pwned');
+    }
+
+    function set() {
+        document.getElementById('target').innerHTML = '<script>pwn();<\/script>'
+    }
+</script>
+
+Target practice test page
+<div id="target" class="border-black bg-lime-900 p-4 text-stone-100 min-h-40 border-6">
+    Here goes innerHtml
+</div>
+<div class="border-black border-6 bg-red-600 p-4 text-white rounded-full size-30 m-auto flex place-items-center place-content-center" onclick="set()">
+    <div>Pwn</div>
+</div>
+</body>
+</html>
