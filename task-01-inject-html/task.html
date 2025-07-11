@@ -10,11 +10,11 @@
 <body class="min-h-full bg-orange-200 p-4 text-center text-4xl font-[Black_Ops_One] flex flex-col gap-2">
 <script>
     function pwn() {
-        alert('pwned');
+        console.log('pwned!');
     }
 
     function set() {
-        document.getElementById('target').innerHTML = '<script>pwn();<\/script>'
+        document.getElementById('target').innerHTML = '<img style="display: none" src=1 onerror="pwn()"/>';
     }
 </script>
 
@@ -23,7 +23,7 @@ Target practice test page
     Here goes innerHtml
 </div>
 <div class="border-black border-6 bg-red-600 p-4 text-white rounded-full size-30 m-auto flex place-items-center place-content-center" onclick="set()">
-    <div>Pwn</div>
+    Pwn
 </div>
 </body>
 </html>
